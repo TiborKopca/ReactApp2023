@@ -3,12 +3,18 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg' */
 import './App.css'
+import Footer from './Footer.jsx';
 import Header from './Header.jsx'
+import Body from './Body.jsx'
 
 function App() {
   return(
-    <Header></Header>
-    
+    //All needs to be inside 1 empty element called Fragment
+    <> 
+    <Header/>
+    <Body/>
+    <Footer/>
+    </>
   );
 
 
