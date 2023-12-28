@@ -1,7 +1,75 @@
-/*MEDIA QUERRIES*/
-@media screen and (max-width:768px){
+var{
+  --fontBaseColor: #444444;
+  --headingsColor: #222222;
+  --hyperlinksColor: #3b82f3;
+  --hyperlinksFocusColor: #1d4ed8;
+}
+
+/* BASE XS CSS/Mobile devices*/
+html{
+  /*small = 12px;*/
+  font-size: small;
+  
+}
+body{
+  margin:0;
+  padding:0;
+  font-family: Inter, sans-serif;
+  color: var(--fontBaseColor);
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 600;
+  color: var(--headingsColor);
+}
+h1{ font-size: 2.5rem;}
+h2{ font-size: 2rem;}
+h3{ font-size: 1.75rem;}
+h4{ font-size: 1.5rem;}
+h5{ font-size: 1.25rem;}
+h6{ font-size: 1rem;}
+/*zmena farby na <a> nefunguje!*/
+a{
+  text-decoration: none;
+  color: var(--hyperlinksColor);
+}
+a:hover, a:focus{
+  color: var(--hyperlinksFocusColor);
+}
+
+header{
+  /*backup viewport, if the browser doesnt understand dvh/svh/lvh*/
+  min-height: 30vh;
+  min-height: 30svh;
+}
+
+
+
+
+
+
+/* MD CSS /Tablets */
+@media screen and (min-width:576px){
   body{
-    font-size:smaller; 
+    font-size: medium; 
+  }
+}
+/* MD CSS /Tablets */
+@media screen and (min-width:768px){
+  body{
+    font-size: large; 
+  }
+}
+/* LG CSS /Desktop */
+@media screen and (min-width:992px){
+  body{
+    font-size: larger; 
+  }
+}
+/* XL CSS /Extra large devices,TV */
+@media screen and (min-width:1200px){
+  body{
+    font-size: x-large; 
   }
 }
 
