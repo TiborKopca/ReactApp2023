@@ -4,13 +4,13 @@ function Header(){
             <h1>Website in React!</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a className="menuHyperLink" href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">My work</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-        </header>
+        </header>     
     );
 }
 export default Header
