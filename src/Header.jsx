@@ -3,8 +3,8 @@ import UserLoginUI from "./components/Login.jsx";
 
 function Header(){
     return(
-        <header>
-            <UserLoginUI id="userLogin" isLogged={false} username="Tibor"/>
+        <header id="header">
+            <UserLoginUI id="userLogin" isLogged={true} username="Tibor"/>
             <Logo 
                 name="Tibor"
                 className="logoAvatar"
@@ -16,10 +16,11 @@ function Header(){
             ></Logo>
             <nav>
                 <ul>
-                    <li><a className="menuHyperLink" href="#">Home</a></li>
+                    <li><a className="menuHyperLink" href="#header">Home</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">My work</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#myWorks">My work</a></li>
+                    <li><a href="#skillList">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <h1>Website in React!</h1>

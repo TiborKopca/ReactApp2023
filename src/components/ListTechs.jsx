@@ -1,0 +1,42 @@
+import propTypes from 'prop-types'
+
+function ListTech(props) {
+    const itemslist = props.items;
+    const category = props.category; 
+
+//ALPHABETICAL SORT
+  itemslist.sort((a,b) => a.name.localeCompare(b.name));
+
+//TESTFILTER
+//  const testFilter = itemslist.filter((tech) => tech.name === "HTML");
+ 
+//MAP
+  const listTech = itemslist.map((tech) => (
+                                            <li key={tech.id}>
+                                            <b>{tech.name}</b> :&nbsp;
+                                            {tech.uses}
+                                            </li>
+                                ));
+ 
+  return (
+    <section id="skillList" className="listSkills">
+    <h2>{category}</h2>
+      <ul className='techslist'>{listTech}</ul>
+    </section>
+  );
+}
+export default ListTech;
+
+//PROP TYPES DEFINITION
+ListTech.propTypes = {
+    items: propTypes.arrayOf(propTypes.shape({
+        id:propTypes.number,
+        name:propTypes.string,
+        uses:propTypes.string
+    })),
+    category: propTypes.string
+}
+ListTech.defaultProps = {
+    category: "Category-placeholder",
+    itemslist:[],
+}

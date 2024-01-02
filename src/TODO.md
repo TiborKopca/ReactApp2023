@@ -3,4 +3,4 @@ DONE Created card component
 DONE Button component
 
 1. Css stylesheets reorganization
-2. 
+2. Before:: after:: pseudoelements to techskills list to make it symectric?

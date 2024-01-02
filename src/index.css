@@ -52,6 +52,11 @@ button:hover{
   float:right;
   margin:0;
 }
+.techslist{
+  padding-inline-start: 0;
+  text-align: center;
+  list-style: none;
+}
 
 /* Default
 :root {

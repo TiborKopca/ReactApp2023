@@ -20,7 +20,7 @@ function Footer(){
     }
 
     return(
-        <footer style={styles}>
+        <footer id="contact" style={styles}>
             <p>&copy; {new Date().getFullYear()} Tibor Kopca</p>
             <p style={styles.theme}>Have a nice {formatDate(today)}</p>
         </footer>
