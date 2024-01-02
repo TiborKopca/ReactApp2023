@@ -38,6 +38,7 @@ button{
 button:hover{
   background-color: #f3782d99;
   color: black;
+  transition: 0.6s;
 }
 .authorDesc{
   margin:0;
@@ -47,7 +48,10 @@ button:hover{
 .logoWrapper{
   max-width: fit-content;
 }
-
+.loginPropmt, .welcomeMessage{
+  float:right;
+  margin:0;
+}
 
 /* Default
 :root {
