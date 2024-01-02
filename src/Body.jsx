@@ -21,7 +21,7 @@ function Body() {
       <Wrapper>
         <Card projectName="Equestrian statues web" year="2018"></Card>
         <Card projectName="Text game in Java" year="2019"></Card>
-        <Card projectName="Some work"></Card>
+        <Card projectName="Some work" ></Card>
       </Wrapper>
     </>
   );

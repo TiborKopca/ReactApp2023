@@ -39,6 +39,14 @@ button:hover{
   background-color: #f3782d99;
   color: black;
 }
+.authorDesc{
+  margin:0;
+  padding:0;
+  text-align:center;
+}
+.logoWrapper{
+  max-width: fit-content;
+}
 
 
 /* Default

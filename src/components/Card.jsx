@@ -2,6 +2,7 @@
 import profilePicture from '../assets/images/project1.jpeg'
 import propTypes from 'prop-types'
 
+//The component receives the argument as a props object
 function Card(props){
     return(
         <div className="card">
@@ -15,11 +16,11 @@ function Card(props){
 //PROP TYPES DEFINITION
 Card.propTypes = {
     projectName: propTypes.string.isRequired,
-    year: propTypes.number.isRequired
+    year: propTypes.string.isRequired
 }
 Card.defaultProps = {
     projectName: "unknown",
-    year: 2000
+    year: "20xx"
 }
 
 export default Card

@@ -1,9 +1,17 @@
-import Logotype from "./components/Logo";
+import Logo from "./components/Logo";
 
 function Header(){
     return(
         <header>
-            <Logotype></Logotype>
+            <Logo 
+                name="Tibor"
+                className="logoAvatar"
+                src="https://avatars.githubusercontent.com/u/49275231?v=4"
+                alt="Logo Avatar"
+                width={100}
+                height={100}
+                id={1}
+            ></Logo>
             <nav>
                 <ul>
                     <li><a className="menuHyperLink" href="#">Home</a></li>
