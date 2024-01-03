@@ -2,9 +2,10 @@ import Logo from "./components/Logo";
 import UserLoginUI from "./components/Login.jsx";
 
 function Header(){
+
     return(
         <header id="header">
-            <UserLoginUI id="userLogin" isLogged={true} username="Tibor"/>
+            <UserLoginUI id="userLogin" isLogged={false} username="Tibor"/>
             <Logo 
                 name="Tibor"
                 className="logoAvatar"

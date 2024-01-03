@@ -10,10 +10,9 @@ function Wrapper({ children }) {
 }
 
 function Body() {
-
   return (
     <>
-      <Button></Button>
+      <Button ></Button>
       <List></List>
       <Wrapper>
         <Card projectName="Equestrian statues web" year="2018"></Card>
