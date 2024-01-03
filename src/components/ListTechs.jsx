@@ -12,9 +12,10 @@ function ListTech(props) {
  
 //MAP
   const listTech = itemslist.map((tech) => (
-                                            <li key={tech.id}>
-                                            <b>{tech.name}</b> :&nbsp;
-                                            {tech.uses}
+                                            <li key={tech.id} className='listParent'>
+                                                <div className='listLeft'><b>{tech.name}</b></div>
+                                                <div className='separator'>:</div>
+                                                <div className='listRight'>{tech.uses}</div>
                                             </li>
                                 ));
  

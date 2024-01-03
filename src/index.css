@@ -57,6 +57,21 @@ button:hover{
   text-align: center;
   list-style: none;
 }
+.listParent{
+  display: flex;
+}
+.separator{
+  flex: 1%;
+  flex-shrink: 0.5;
+}
+.listLeft{
+  flex: 45%;
+  text-align: right;
+}
+.listRight{
+  flex: 45%;
+  text-align: left;
+}
 
 /* Default
 :root {
