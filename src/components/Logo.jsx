@@ -1,9 +1,12 @@
 import AuthorNameText from "./AuthorName.jsx";
 import propTypes from 'prop-types'
+import { useState } from "react";
 
 let clickNumber = 0;
 
 function Logo(props) {
+  //STATE MANAGEMENT
+  const [showMore, setShowMore] = useState(false);
   //EVENT HANDLER
   const handleClickImg = (e) => {
     if(clickNumber %2 == 0){
@@ -15,7 +18,10 @@ function Logo(props) {
     }
     clickNumber += 1; //iterate clickCount, so next time the number will be even/odd
   }
-  
+
+  function handleMoreClick() {
+    setShowMore(!showMore);
+  }
   return (
     <div className="logoWrapper">
       <img
@@ -28,7 +34,10 @@ function Logo(props) {
         id={props.id}
         onClick={(e) => handleClickImg(e)}
       />
-      <AuthorNameText></AuthorNameText>
+      <button onClick={handleMoreClick}>
+        {showMore ? 'Hide' : 'Show'} details
+      </button>
+      {showMore && <AuthorNameText></AuthorNameText>}
     </div>
   );
 }

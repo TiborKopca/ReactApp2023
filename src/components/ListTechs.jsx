@@ -1,4 +1,5 @@
 import propTypes from 'prop-types'
+import {techs} from './Data/Data.jsx'
 
 function ListTech(props) {
     const itemslist = props.items;
@@ -21,7 +22,7 @@ function ListTech(props) {
  
   return (
     <section id="skillList" className="listSkills">
-    <h2>{category}</h2>
+    <h2>{category} ({techs.length})</h2>
       <ul className='techslist'>{listTech}</ul>
     </section>
   );

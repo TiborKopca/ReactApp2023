@@ -4,6 +4,7 @@
     background-color: rgba(163, 163, 163, 0.3);
     display:flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 form{
     
@@ -12,4 +13,8 @@ form{
 }
 .inputBar{
     width: 100%;
+}
+.test{
+    flex:100%;
+    text-align: center;
 }

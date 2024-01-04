@@ -5,7 +5,7 @@ const skill2 = "CSS";
 const skill3 = "Javascript";
 const skill4 = "React";
 
-function Item({ name, isDone }) {
+function Item({ name, isDone}) {
   if (isDone) {
     return <li className="item">{name} &#x2713;</li>;
   }

@@ -1,10 +1,13 @@
 import Logo from "./components/Logo";
 import UserLoginUI from "./components/Login.jsx";
+import HeaderColorPicker from "./components/HeaderColorPicker.jsx";
 
 function Header(){
-
+    let headerBackgroundColor = '#a3a3a34d';
+    
     return(
-        <header id="header">
+        <header id="header" style={{backgroundColor:headerBackgroundColor}} >
+            <HeaderColorPicker ></HeaderColorPicker>
             <UserLoginUI 
                 id="userLogin" isLogged={false} username="Tibor" 
                 onLogin={()=> {}}
