@@ -47,6 +47,7 @@ button:hover{
 }
 .logoWrapper{
   max-width: fit-content;
+  cursor: pointer;
 }
 .loginPropmt, .welcomeMessage{
   float:right;

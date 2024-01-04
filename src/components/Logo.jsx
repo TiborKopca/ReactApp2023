@@ -1,9 +1,21 @@
 import AuthorNameText from "./AuthorName.jsx";
 import propTypes from 'prop-types'
 
-function Logo(props) {
-    
+let clickNumber = 0;
 
+function Logo(props) {
+  //EVENT HANDLER
+  const handleClickImg = (e) => {
+    if(clickNumber %2 == 0){
+      // e.target.style = "transform: scale(1.4)";
+      e.target.style = "rotate: 180deg;transition: rotate 0.5s;";
+    }else{
+      e.target.style = "rotate: 0deg;transition: rotate 0.5s;";
+      //e.target.style = "transform: scale(1)";
+    }
+    clickNumber += 1; //iterate clickCount, so next time the number will be even/odd
+  }
+  
   return (
     <div className="logoWrapper">
       <img
@@ -14,6 +26,7 @@ function Logo(props) {
         width={props.width}
         height={props.height}
         id={props.id}
+        onClick={(e) => handleClickImg(e)}
       />
       <AuthorNameText></AuthorNameText>
     </div>
@@ -30,3 +43,4 @@ Logo.propTypes = {
     id: propTypes.number.isRequired,
 }
 export default Logo
+

@@ -1,0 +1,15 @@
+.searchWrapper{
+    padding: 1em 1em;
+    margin: 1em auto;
+    background-color: rgba(163, 163, 163, 0.3);
+    display:flex;
+    justify-content: center;
+}
+form{
+    
+    display: flex;
+    width: 60%;
+}
+.inputBar{
+    width: 100%;
+}

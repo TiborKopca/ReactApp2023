@@ -3,6 +3,7 @@ import Button from "./components/Button/Button.jsx";
 import List from "./components/List.jsx";
 import ListTech from "./components/ListTechs.jsx";
 import {techs} from "./components/Data/Data.jsx";
+import SearchBar from "./components/SearchBar/SearchBar.jsx";
 
 // eslint-disable-next-line react/prop-types
 function Wrapper({ children }) {
@@ -13,6 +14,7 @@ function Body() {
   return (
     <>
       <Button ></Button>
+      <SearchBar></SearchBar>
       <List></List>
       <Wrapper>
         <Card projectName="Equestrian statues web" year="2018"></Card>
