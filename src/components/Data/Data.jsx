@@ -28,4 +28,5 @@ export const techs = [
     { id: 27, name: "Data Analytics", uses: "Operations"  },
     { id: 28, name: "C#", uses: "Back-End" },
     { id: 29, name: "Unity 3D", uses: "Game dev platform" },
+    { id: 30, name: "Polievocka", uses: "mnam mnam" },
   ];

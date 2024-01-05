@@ -1,18 +1,19 @@
 import Logo from "./components/Logo";
 import UserLoginUI from "./components/Login.jsx";
 import HeaderColorPicker from "./components/HeaderColorPicker.jsx";
+import Clock from "./components/Clock.jsx";
 
 function Header(){
     let headerBackgroundColor = '#a3a3a34d';
     
     return(
         <header id="header" style={{backgroundColor:headerBackgroundColor}} >
-            <HeaderColorPicker ></HeaderColorPicker>
             <UserLoginUI 
-                id="userLogin" isLogged={false} username="Tibor" 
+                id="userLogin" isLogged={true} username="Tibor" 
                 onLogin={()=> {}}
                 onLogoff={()=> {console.warn("Logoff atempt in progress!")}}
-                />
+            ></UserLoginUI>
+            <Clock></Clock>
             <Logo 
                 name="Tibor"
                 className="logoAvatar"
@@ -21,8 +22,8 @@ function Header(){
                 width={100}
                 height={100}
                 id={1}
-                
             ></Logo>
+            <HeaderColorPicker ></HeaderColorPicker>
             <nav>
                 <ul>
                     <li><a className="menuHyperLink" href="#header">Home</a></li>
