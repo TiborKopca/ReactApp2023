@@ -11,7 +11,7 @@ const Clock = () =>{
         setCurrentTime(currentTime) 
     }
     setInterval(UpdateTime)
-    return <div style={{textAlign:"left"}}>{currentTime}</div>
+    return <div style={{display:"inline",textAlign:"left"}}>{currentTime}</div>
 }
 export default Clock
 

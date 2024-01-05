@@ -3,6 +3,7 @@ DONE Created card component
 DONE Button component
 DONE pseudoelements to techskills list symmetrical
 DONE Searchbar
+DONE Clock & Render Timer
 
 1. CSS stylesheets reorganization
 2. Notepad like element on position absolute - text area to make notes?

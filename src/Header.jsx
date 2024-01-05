@@ -1,7 +1,8 @@
 import Logo from "./components/Logo";
 import UserLoginUI from "./components/Login.jsx";
 import HeaderColorPicker from "./components/HeaderColorPicker.jsx";
-import Clock from "./components/Clock.jsx";
+import Clock from "./components/Time/Clock.jsx";
+import Timer from "./components/Time/Timer";
 
 function Header(){
     let headerBackgroundColor = '#a3a3a34d';
@@ -14,6 +15,7 @@ function Header(){
                 onLogoff={()=> {console.warn("Logoff atempt in progress!")}}
             ></UserLoginUI>
             <Clock></Clock>
+            <Timer></Timer>
             <Logo 
                 name="Tibor"
                 className="logoAvatar"

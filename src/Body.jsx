@@ -4,6 +4,7 @@ import List from "./components/List.jsx";
 import ListTech from "./components/ListTechs.jsx";
 import {techs} from "./components/Data/Data.jsx";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
+import ContactForm from "./components/ContactForm/ContactForm";
 
 // eslint-disable-next-line react/prop-types
 function Wrapper({ children }) {
@@ -22,6 +23,7 @@ function Body() {
         <Card projectName="Some work" ></Card>
       </Wrapper>
         <ListTech items={techs} category="TechSkills"/>
+        <ContactForm></ContactForm>
     </>
   );
 }
