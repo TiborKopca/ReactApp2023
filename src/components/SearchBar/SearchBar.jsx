@@ -25,10 +25,12 @@ export default function SearchBar(){
                     name="searchInputField"
                     value={inputs.searchInputField || ""} 
                     className={styles.inputBar} 
-                    placeholder="search"
+                    placeholder="enter your search querry here"
                     onChange={handleChange}
                 />
-                <input type="submit" />
+                <input type="submit" 
+                    value={"search"}
+                />
             </form>
             {/* <div className={styles.test}>{inputs}</div> */}
         </section>

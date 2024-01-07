@@ -1,7 +1,7 @@
 .contactFormWrapper{
     height: 70vh;
 }
-form{
+.contactForm{
     display: flex;
     width: 90%;
     padding: auto 20px;
@@ -9,7 +9,7 @@ form{
     flex-wrap: wrap;
     margin: auto;
 }
-input,textarea{
+.inputFieldContactForm,.textareaInContactForm{
     flex: 40%;
     margin-bottom: 1em;
 }
@@ -19,27 +19,44 @@ label{
     text-align: center;
     font-size: smaller;
 }
-input[type="submit"]{
-    width: 30px;
-    display: block;
-  margin: 0 auto;
-  flex:40vw;
-  background-color: var(--contactButtonColor);
-  color: var(--baseTextColor);
-  padding: 10px 20px;
-  font-size: medium;
+.submitContactForm{
+    /* width: 30px; */
+    /* display: block; */
+    /* margin: 0 auto; */
+    flex:40vw;
+    margin-left: 70%;
+    background-color: var(--contactButtonColor);
+    color: var(--baseTextColor);
+    padding: 5px 20px;
+    font-size: medium;
     border-radius: 5px;
     border:none;
     cursor: pointer;
 }
-input[type="submit"]:hover{
+.submitContactForm:hover{
     background-color: #f3782d99;
     color: black;
     transition: 0.6s;
     cursor: pointer;
   }
-select{
+.selectInContactForm{
     flex:40%;
     margin-bottom: 1em;
     margin-left: -6px;
+}
+.conditionParagraph{
+    flex: 100%;
+    text-align: center;
+}
+.radioN, .radioY{
+    /* flex:50%; */
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+.testParagraph{
+    flex: 100%;
+    text-align: center;
+    font-size: 9px;
+    font-style: italic;
 }
