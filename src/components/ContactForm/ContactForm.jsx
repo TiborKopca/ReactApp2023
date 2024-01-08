@@ -8,6 +8,12 @@ function ContactForm() {
   const [comment, setComment] = useState("");
   const [dropdown, setDropdown] = useState("");
   const [conditions, setConditions] = useState("Not accepted");
+ 
+  const [person, setPerson] = useState({
+    firstName: 'Papa',
+    lastName: 'Noel',
+    email: 'Papa.Noel@Pornhub.com'
+  })
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,18 +39,64 @@ function ContactForm() {
   function handleConditionsChange(event) {
     setConditions(event.target.value);
   }
-
+  function handleFirstNameChange(e) {
+    person.firstName = e.target.value;
+    setPerson({
+        ...person, // Copy the old fields
+        firstName: e.target.value // But override this one
+      });
+  }
+  function handleLastNameChange(e) {
+    person.lastName = e.target.value;
+    setPerson({
+        ...person, // Copy the old fields
+        lastName: e.target.value // But override this one
+      });
+  }
+  function handleEmailChange(e) {
+    person.email = e.target.value;
+    setPerson({
+        ...person, // Copy the old fields
+        email: e.target.value // But override this one
+      });
+  }
   return (
     <div id="contact" className={styles.contactFormWrapper}>
       <h3>Contact me, or leave a comment</h3>
       <form onSubmit={handleSubmit} className={styles.contactForm}>
+
+      <label htmlFor="inputFirstName">First name:</label>
+        <input 
+            id="inputFirstName"
+            className={styles.nameInput}
+            value={person.firstName}
+            placeholder="enter your name"
+            onChange={handleFirstNameChange}
+        />
+        <label htmlFor="inputLastName">Last name:</label>
+        <input
+            id="inputLastName" 
+            className={styles.nameInput}
+            value={person.lastName}
+            onChange={handleLastNameChange}
+        />
+        <label htmlFor="inputEmail">Email:(required)</label>
+        <input 
+            id="inputEmail"
+            className={styles.nameInput}
+            value={person.email}
+            onChange={handleEmailChange}
+            required
+        />
+        <div className={styles.testParagraph}>TestValue/default is : {person.firstName} {person.lastName}, {person.email}</div>
         <label htmlFor="inputName">Name (required)</label>
         <input
-          className={styles.inputFieldContactForm}
           id="inputName"
+          className={styles.inputFieldContactForm}
+          placeholder="enter your name"
           value={name}
           onChange={handleNameChange}
-          placeholder="enter your name"
+          
           required
         />
         <label htmlFor="inputStar">How many slaps do you want?</label>
@@ -116,6 +168,7 @@ function ContactForm() {
           />
         </div>
         <div className={styles.testParagraph}>TestValue/default is : {conditions}</div>
+
         <input type="submit" className={styles.submitContactForm} />
       </form>
     </div>

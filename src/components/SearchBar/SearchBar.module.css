@@ -14,7 +14,14 @@ form{
 .inputBar{
     width: 100%;
 }
-.test{
-    flex:100%;
+.testParagraph{
+    flex: 100%;
     text-align: center;
+    font-size: 9px;
+    font-style: italic;
+}
+.searchResult{
+    text-align: center;
+    font-weight: 600;
+    padding: 2em 2em;
 }

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function SearchBar() {
   //inputs is a state variable and setInputs is the setter function
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState({searchInputField:""});
   //UPDATER
   const [isSent, setIsSent] = useState(false);
 
@@ -17,12 +17,15 @@ export default function SearchBar() {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
+    //SPREAD OPERATOR TO ITERATE ALL PROPERTIES IN OBJECT
+    //Object is inside arrow function
+    //setInputs((values) => ({ ...values, searchInputField:event.target.value }));
     setInputs((values) => ({ ...values, [name]: value }));
 };
 
   //CONDITIONAL RENDERING
   if (isSent) {
-    return <p>Your search &quot;{inputs.searchInputField}&quot; is not encountered!</p>;
+    return <p className={styles.searchResult}>Your search &quot;{inputs.searchInputField}&quot; is not encountered!</p>;
   }
   return (
     <section className={styles.searchWrapper}>
@@ -37,7 +40,7 @@ export default function SearchBar() {
         />
         <input type="submit" value={"search"} />
       </form>
-      {/* <div className={styles.test}>{inputs}</div> */}
+      <div className={styles.testParagraph}>Test value:{inputs.searchInputField}</div>
     </section>
   );
 }

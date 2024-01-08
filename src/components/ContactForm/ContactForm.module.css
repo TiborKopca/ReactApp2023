@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     margin: auto;
 }
-.inputFieldContactForm,.textareaInContactForm{
+.inputFieldContactForm,.textareaInContactForm, .nameInput{
     flex: 40%;
     margin-bottom: 1em;
 }
@@ -60,4 +60,5 @@ label{
     text-align: center;
     font-size: 9px;
     font-style: italic;
+    margin-bottom: 2em ;
 }
