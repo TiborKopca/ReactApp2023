@@ -3,10 +3,13 @@ import UserLoginUI from "./components/Login.jsx";
 import HeaderColorPicker from "./components/HeaderColorPicker.jsx";
 import Clock from "./components/Time/Clock.jsx";
 import Timer from "./components/Time/Timer";
+import { useState } from "react";
 
 function Header(){
-    let headerBackgroundColor = '#a3a3a34d';
-    
+    const [headerBackgroundColor, setHeaderBackgroundColor] = useState("#e6e6fa");
+    function handleHeaderColor(event){
+        setHeaderBackgroundColor(event.target.value)
+    }
     return(
         <header id="header" style={{backgroundColor:headerBackgroundColor}} >
             <UserLoginUI 
@@ -25,7 +28,9 @@ function Header(){
                 height={100}
                 id={1}
             ></Logo>
-            <HeaderColorPicker ></HeaderColorPicker>
+            <HeaderColorPicker></HeaderColorPicker>
+            <label className="inputColorPicker" htmlFor="inputColor">Select a header color:</label>
+            <input className="inputColorPicker" id="inputColor" type="color" value={headerBackgroundColor} onChange={handleHeaderColor}/>
             <nav>
                 <ul>
                     <li><a className="menuHyperLink" href="#header">Home</a></li>

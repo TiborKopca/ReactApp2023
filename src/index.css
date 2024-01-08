@@ -1,7 +1,16 @@
 :root{
   --baseTextColor:#f1f1f1;
   --contactButtonColor: hsl(194.63deg 100% 31.37%);
-
+  --fontColorSelection: hsl(53, 22%, 93%);
+  --backgroundSelection:hsl(0, 68%, 65%);
+}
+::-moz-selection { /* Code for Firefox */
+  color: var(--fontColorSelection);
+  background: var(--backgroundSelection);
+}
+::selection {
+  color: var(--fontColorSelection);
+  background: var(--backgroundSelection);
 }
 .card{
   border: 1px solid hsl(0, 0%, 50%);
@@ -75,7 +84,9 @@ button:hover{
   flex: 45%;
   text-align: left;
 }
-
+.inputColorPicker{
+  cursor: pointer;
+}
 /* Default
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

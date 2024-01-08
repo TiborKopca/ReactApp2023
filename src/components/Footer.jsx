@@ -10,19 +10,10 @@ function Footer(){
             fontStyle: 'italic'
         }
     }
-    const today = new Date();
-    
-    function formatDate(date){
-        return new Intl.DateTimeFormat(
-            'en-US',
-            { weekday: 'long'}
-            ).format(date);
-    }
 
     return(
         <footer style={styles}>
-            <p>&copy; {new Date().getFullYear()} Tibor Kopca</p>
-            <p style={styles.theme}>Have a nice {formatDate(today)}</p>
+            <p style={styles.theme}>&copy; {new Date().getFullYear()} Tibor Kopca</p>
         </footer>
     );
 }

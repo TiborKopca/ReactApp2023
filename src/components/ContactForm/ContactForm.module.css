@@ -1,5 +1,6 @@
 .contactFormWrapper{
     height: 70vh;
+    background-color: rgba(163, 163, 163, 0.3);
 }
 .contactForm{
     display: flex;

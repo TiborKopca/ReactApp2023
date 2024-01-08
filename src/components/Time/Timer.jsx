@@ -7,12 +7,13 @@ function Timer() {
 
   //useEffect runs on every render
   useEffect(() => {
-    let timer = 
+    // let timer = 
     setTimeout(() => {
+      //updater function
       setCount((count) => count + 1);
     }, 1000);
     //Clean up the timer at the end of the useEffect hook
-    return () => clearTimeout(timer)
+    // return () => clearTimeout(timer)
   }, []);
 
   //this useEffect runs every 1000ms = 1s and counts time in seconds

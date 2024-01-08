@@ -8,7 +8,7 @@ function HeaderColorPicker(){
         setColor("#c9e8eb");
     }
     return (
-        <div style={{margin:"auto",width:"100%",display:"flex"}}>
+        <div style={{margin:"auto",width:"100%",display:"flex "}}>
             <button 
                 type="button"
                 onClick={() => setColor("#91e191")}
@@ -25,9 +25,10 @@ function HeaderColorPicker(){
             <button 
                 type="button"
                 onClick={handleChangeC}
-                style={buttonStyles}>
-                Bluish
-            </button>
+                style={buttonStyles}
+                >
+                Blue
+            </button>  
         </div>
     )
 }
