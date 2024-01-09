@@ -1,6 +1,6 @@
 import Card from "./components/Card.jsx";
 import Button from "./components/Button/Button.jsx";
-import List from "./components/List.jsx";
+import List from "./components/ListArray/List.jsx";
 import ListTech from "./components/ListTechs.jsx";
 import {techs} from "./components/Data/Data.jsx";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
@@ -27,4 +27,4 @@ function Body() {
     </>
   );
 }
-export default Body;
+export default Body

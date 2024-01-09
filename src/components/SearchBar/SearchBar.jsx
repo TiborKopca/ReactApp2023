@@ -17,7 +17,7 @@ export default function SearchBar() {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    //SPREAD OPERATOR TO ITERATE ALL PROPERTIES IN OBJECT
+    //SPREAD OPERATOR TO ITERATE ALL PROPERTIES IN OBJECT WITH A DYNAMIC NAME
     //Object is inside arrow function
     //setInputs((values) => ({ ...values, searchInputField:event.target.value }));
     setInputs((values) => ({ ...values, [name]: value }));

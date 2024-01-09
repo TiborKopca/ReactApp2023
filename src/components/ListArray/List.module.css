@@ -1,0 +1,29 @@
+.listSection{
+    margin-bottom: 2em;
+    margin-left:2em;
+}
+.addNewSkillButton{
+    display: inline;
+    font-size: medium;
+    
+    /* border: 0.2em solid black; */
+    background-color: var(--contactButtonColor);
+    color: var(--baseTextColor);
+    padding: 0.2em 20px;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+}
+.inputNewSkill{
+    font-size: medium;
+}
+.listDeleteButton{
+    display: inline;
+    font-size: medium;
+    background-color: var(--contactButtonColor);
+    color: var(--baseTextColor);
+    
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+}

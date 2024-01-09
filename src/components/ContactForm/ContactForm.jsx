@@ -40,26 +40,35 @@ function ContactForm() {
     setConditions(event.target.value);
   }
   function handleFirstNameChange(e) {
-    person.firstName = e.target.value;
+    // this only mutates the state from past render
+    // person.firstName = e.target.value; 
     setPerson({
-        ...person, // Copy the old fields
-        firstName: e.target.value // But override this one
+        ...person,                  // Copy the old fields
+        firstName: e.target.value   // But override this one
       });
   }
-  function handleLastNameChange(e) {
-    person.lastName = e.target.value;
-    setPerson({
-        ...person, // Copy the old fields
-        lastName: e.target.value // But override this one
-      });
-  }
+
+//   function handleLastNameChange(e) {
+//     setPerson({
+//         ...person,                  // Copy the old fields
+//         lastName: e.target.value    // But override this one
+//       });
+//   }
+
   function handleEmailChange(e) {
-    person.email = e.target.value;
     setPerson({
-        ...person, // Copy the old fields
-        email: e.target.value // But override this one
+        ...person,                  // Copy the old fields
+        email: e.target.value       // But override this one
       });
   }
+  //DYNAMIC NAME TO A PROPERTY USING [], this handler is used in "last name" input field instead of "handleLastNameChange"
+  function handlePersonChange(e){
+    setPerson({
+        ...person,
+        [e.target.name]: e.target.value
+    });
+  }
+
   return (
     <div id="contact" className={styles.contactFormWrapper}>
       <h3>Contact me, or leave a comment</h3>
@@ -77,8 +86,9 @@ function ContactForm() {
         <input
             id="inputLastName" 
             className={styles.nameInput}
+            name="lastName"
             value={person.lastName}
-            onChange={handleLastNameChange}
+            onChange={handlePersonChange}
         />
         <label htmlFor="inputEmail">Email:(required)</label>
         <input 
@@ -89,6 +99,7 @@ function ContactForm() {
             required
         />
         <div className={styles.testParagraph}>TestValue/default is : {person.firstName} {person.lastName}, {person.email}</div>
+
         <label htmlFor="inputName">Name (required)</label>
         <input
           id="inputName"
@@ -96,7 +107,6 @@ function ContactForm() {
           placeholder="enter your name"
           value={name}
           onChange={handleNameChange}
-          
           required
         />
         <label htmlFor="inputStar">How many slaps do you want?</label>
