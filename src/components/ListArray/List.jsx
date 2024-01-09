@@ -6,6 +6,7 @@ const skill1 = "HTML";
 const skill2 = "CSS";
 const skill3 = "Javascript";
 const skill4 = "React";
+let initArray = ["HTML5","CSS3","Javascript","React"];
 
 function Item({ name, isDone}) {
   if (isDone) {
@@ -43,21 +44,61 @@ export default function List() {
     { id: 2, name: 'Louise Nevelson'},
   ]
   */
-  const [skills, setSkills] = useState(["HTML5","CSS3","Javascript","React"]);
+  //USE STATE NEEDS TO BE IN MAIN FUNCTION, BUT DATA/ARRAY DOESNT
+  const [skills, setSkills] = useState(initArray);
   
+  //ERROR HANDLER
+  function findDuplicates(array,newData){
+    const duplicate = array.find((item) => {return item === newData})
+    if(duplicate === newData){
+      return true
+    }else{
+    return false
+  }}
+
   //LIST/ARRAY HANDLERS
     function handleAddSkill(){
       const newSkill = document.getElementById('skillInput').value;
       document.getElementById('skillInput').value = '';
-      //setSkills((skills) => [...skills, newSkill])
-      //s === previous state
-      setSkills((s) => [...s, newSkill])
-  
+      //CONDITIONS, if entry already exists, wont add it
+        // const duplicate = skills.find((skill) => {return skill === newSkill})
+        if(findDuplicates(skills,newSkill)){
+          console.error("Error : New entry already exists in array/list.")
+        }else{
+          //setSkills((skills) => [...skills, newSkill])
+          //s === previous state
+          // Re-render with the new array
+          setSkills((s) => [...s, newSkill])
+        }
     }
+
     function handleRemoveSkill(index){
+      //Note that filter does not modify the original array so it could be written like>
       //setSkills(skills.filter((element, i) => i== index))
-        setSkills(skills.filter((_, i) => i!== index))
+        setSkills((s) => s.filter((_, i) => i!== index))
     }
+
+    function handleAddSkillBetween(index){
+      const newSkill = document.getElementById('skillInput').value;
+      document.getElementById('skillInput').value = '';
+      //index + 1 ==> the data will be put to the next row
+      const insertAt = index + 1;
+
+      if(findDuplicates(skills,newSkill)){
+        console.error("Error : New entry already exists in array/list.")
+      }else{
+        const nextSkill = [
+          //items before the insertion point = from 0 to desired id number
+          ...skills.slice(0, insertAt),
+          //new item {id:nextId++, name: name}
+          newSkill,
+          //items after
+          ...skills.slice(insertAt)
+        ];
+        setSkills(nextSkill)
+      }
+    }
+
   return (
     <section className={styles.listSection}>
       <h2>List of things on the website</h2>
@@ -79,9 +120,13 @@ export default function List() {
                                           className={styles.listDeleteButton} 
                                           onClick={()=> handleRemoveSkill(index)}
                                           >&#x2B05; delete</button>
+                                          <button 
+                                          className={styles.listInsertButton} 
+                                          onClick={()=> handleAddSkillBetween(index)}
+                                          >&#x2B05; insert after this</button>
                                         </li>)}
       </ul>
-      <label htmlFor="skillInput">Write new skill or click on existing to delete:</label>
+      <label htmlFor="skillInput">Write new skill (at the end):</label>
       <input 
           className={styles.inputNewSkill}
           type="text"
