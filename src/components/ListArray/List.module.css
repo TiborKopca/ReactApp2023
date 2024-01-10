@@ -2,6 +2,18 @@
     margin-bottom: 2em;
     margin-left:2em;
 }
+.listWrapper{
+    text-align: center;
+    width: 80vw;
+}
+.listRow{
+    margin-bottom: 0.2em;
+    display: flex;
+}
+.listText{
+    flex:1;
+    text-align: center;
+}
 .addNewSkillButton{
     display: inline;
     font-size: medium;
@@ -9,15 +21,16 @@
     /* border: 0.2em solid black; */
     background-color: var(--contactButtonColor);
     color: var(--baseTextColor);
-    padding: 0.2em 20px;
+    padding: 0.2em 0.2em;
     border-radius: 5px;
     border:none;
     cursor: pointer;
 }
 .inputNewSkill{
     font-size: medium;
+    flex: 1;
 }
-.listDeleteButton, .listInsertButton{
+.listDeleteButton, .listInsertButton, .listMoveButton{
     display: inline;
     font-size: medium;
     background-color: var(--contactButtonColor);
@@ -26,4 +39,17 @@
     border:none;
     cursor: pointer;
     margin-left:0.3em;
+}
+.emptyUpSpace{
+    display: inline;
+    min-width: 30px;
+}
+.emptyDownSpace{
+    display: inline;
+    min-width: 50px;
+}
+.skillInputRowWrapper{
+    display: flex;
+    width: 80vw;
+    margin-left: 3em;
 }
