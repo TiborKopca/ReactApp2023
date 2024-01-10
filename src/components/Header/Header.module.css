@@ -1,0 +1,14 @@
+.headerWrapper{
+    background-image: url("/src/assets/images/derek-thomson-NqJYQ3m_rVA-unsplash.jpg");
+    /* opacity: 0.3; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+header{
+    color: var(--baseTextColor)
+}
+.navbar{
+    /* background-color: #e6e6fa; */
+}

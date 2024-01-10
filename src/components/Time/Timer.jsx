@@ -4,8 +4,13 @@ function Timer() {
   // let time = new Date().toLocaleTimeString();
   const [count, setCount] = useState(0);
   const [countedTime, setCountedTime] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
 
-  //useEffect runs on every render
+  //useEffect(()=>{})             runs on every re-render
+  //useEffect(()=>{},[])          runs only on mount
+  //useEffect(()=>{},[value])     runs on mount + when value/dependency changes
+  //useEffect(function,[dependencies])
   useEffect(() => {
     // let timer = 
     setTimeout(() => {
@@ -14,7 +19,9 @@ function Timer() {
     }, 1000);
     //Clean up the timer at the end of the useEffect hook
     // return () => clearTimeout(timer)
-  }, []);
+    
+    //Empty array of dependencies === effect runs only on mount/first render
+  }, [count]);
 
   //this useEffect runs every 1000ms = 1s and counts time in seconds
   useEffect(() => {
@@ -26,6 +33,22 @@ function Timer() {
     return () => clearTimeout(timer)
   });
   
+  function handleWindowResize(){
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
+  useEffect(() => {
+  // window.addEventListener(event, function)
+  window.addEventListener("resize",handleWindowResize)
+  console.info('event listener to window fired')
+
+  //Cleanup
+  return ()=>{
+    window.removeEventListener("resize",handleWindowResize)
+    console.info('event listener to window removed')
+  }
+  },[])
+
   return (
     <>
       <div style={{ display: "inline", marginLeft: "1em" }}>
@@ -34,6 +57,7 @@ function Timer() {
       <div style={{ display: "inline", marginLeft: "1em" }}>
         Time on page: {countedTime}s
       </div>
+      <div>Window Width:{width}px Height:{height}px</div>
     </>
   );
 }

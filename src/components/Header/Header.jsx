@@ -1,9 +1,10 @@
-import Logo from "./components/Logo";
-import UserLoginUI from "./components/Login.jsx";
-import HeaderColorPicker from "./components/HeaderColorPicker.jsx";
-import Clock from "./components/Time/Clock.jsx";
-import Timer from "./components/Time/Timer";
+import Logo from "./../Logo.jsx";
+import UserLoginUI from "./../Login.jsx";
+import HeaderColorPicker from "./../HeaderColorPicker.jsx";
+import Clock from "./../Time/Clock.jsx";
+import Timer from "./../Time/Timer";
 import { useState } from "react";
+import styles from './Header.module.css';
 
 function Header(){
     const [headerBackgroundColor, setHeaderBackgroundColor] = useState("#e6e6fa");
@@ -11,7 +12,7 @@ function Header(){
         setHeaderBackgroundColor(event.target.value)
     }
     return(
-        <header id="header" style={{backgroundColor:headerBackgroundColor}} >
+        <header id="header"  className={styles.headerWrapper}>
             <UserLoginUI 
                 id="userLogin" isLogged={true} username="Tibor" 
                 onLogin={()=> {}}
@@ -31,7 +32,7 @@ function Header(){
             <HeaderColorPicker></HeaderColorPicker>
             <label className="inputColorPicker" htmlFor="inputColor">Select a header color:</label>
             <input className="inputColorPicker" id="inputColor" type="color" value={headerBackgroundColor} onChange={handleHeaderColor}/>
-            <nav>
+            <nav className={styles.navbar} style={{backgroundColor:headerBackgroundColor}}>
                 <ul>
                     <li><a className="menuHyperLink" href="#header">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -40,7 +41,7 @@ function Header(){
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <h1>Website in React!</h1>
+            
         </header>     
     );
 }

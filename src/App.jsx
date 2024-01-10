@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg' */
 import './App.css'
 import Footer from './components/Footer.jsx';
-import Header from './Header.jsx'
+import Header from './components/Header/Header.jsx'
 import Body from './Body.jsx'
 
 function App() {

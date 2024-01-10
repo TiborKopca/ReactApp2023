@@ -14,6 +14,7 @@ function Wrapper({ children }) {
 function Body() {
   return (
     <>
+      <h1>Website in React!</h1>
       <Button ></Button>
       <SearchBar></SearchBar>
       <List></List>

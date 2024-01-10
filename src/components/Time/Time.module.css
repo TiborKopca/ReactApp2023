@@ -1,0 +1,6 @@
+.clockWrapper{
+    display: inline;
+    text-align: left;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.75);
+}

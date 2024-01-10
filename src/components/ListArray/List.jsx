@@ -122,8 +122,8 @@ export default function List() {
       // console.log(index)
       // console.log(skills.length)
       const updatedList = [...skills];
-      // //Move up > [[index],[index - 1]] = [[index -1],[index]]
-      // [updatedList[index],updatedList[index - 1]] = [updatedList[index -1],updatedList[index]];
+      // Move down > [[index],[index + 1]] = [[index + 1],[index]]
+      [updatedList[index],updatedList[index + 1]] = [updatedList[index + 1],updatedList[index]];
       setSkills(updatedList);
     }
   }
