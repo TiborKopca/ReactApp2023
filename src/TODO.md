@@ -7,4 +7,4 @@ DONE Clock & Render Timer
 
 1. CSS stylesheets reorganization
 2. Notepad like element on position absolute - text area to make notes?
-3. 
+3. Login button + show stats for nerds

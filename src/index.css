@@ -84,9 +84,7 @@ button:hover{
   flex: 45%;
   text-align: left;
 }
-.inputColorPicker{
-  cursor: pointer;
-}
+
 /* Default
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
