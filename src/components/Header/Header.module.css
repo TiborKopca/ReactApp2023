@@ -12,3 +12,6 @@ header{
 .navbar{
     /* background-color: #e6e6fa; */
 }
+.inputColorPicker{
+    cursor: pointer;
+  }

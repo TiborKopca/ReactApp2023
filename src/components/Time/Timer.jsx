@@ -1,29 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Timer() {
   // let time = new Date().toLocaleTimeString();
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   const [countedTime, setCountedTime] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
+  const count = useRef(0);
 
-  //useEffect(()=>{})             runs on every re-render
-  //useEffect(()=>{},[])          runs only on mount
-  //useEffect(()=>{},[value])     runs on mount + when value/dependency changes
-  //useEffect(function,[dependencies])
   useEffect(() => {
-    // let timer = 
-    setTimeout(() => {
-      //updater function
-      setCount((count) => count + 1);
-    }, 1000);
-    //Clean up the timer at the end of the useEffect hook
-    // return () => clearTimeout(timer)
-    
-    //Empty array of dependencies === effect runs only on mount/first render
-  }, [count]);
+    count.current = count.current + 1
+  })
+  // useEffect(() => {
+  //   // let timer = 
+  //   setTimeout(() => {
+  //     //updater function
+  //     setCount((count) => count + 1);
+  //   }, 1000);
+  // }, [count]);
 
   //this useEffect runs every 1000ms = 1s and counts time in seconds
+  //useEffect(()=>{})             runs on every re-render
+  //useEffect(()=>{},[])          runs only on mount, Empty array of dependencies === effect runs only on mount/first render
+  //useEffect(()=>{},[value])     runs on mount + when value/dependency changes
+  //useEffect(function,[dependencies])
   useEffect(() => {
     let timer =
     setTimeout(() => {
@@ -52,7 +52,7 @@ function Timer() {
   return (
     <>
       <div style={{ display: "inline", marginLeft: "1em" }}>
-        Rendered: {count} times
+        Rendered: {count.current} times
       </div>
       <div style={{ display: "inline", marginLeft: "1em" }}>
         Time on page: {countedTime}s

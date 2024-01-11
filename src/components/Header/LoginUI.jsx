@@ -14,6 +14,7 @@ function LoginWrapper({onClick,children,className}){
     )
 }
 
+//NOTICE THAT WE ARENT USING PROPS TO PASS isLogged property, that is passed by context
 function LoginUI({username, onLogoff, onLogin}){
     //INLINE EVENT HANDLER - wrapped in an anonymous function
     // const handlerLogin = (message,event) => {
@@ -21,6 +22,7 @@ function LoginUI({username, onLogoff, onLogin}){
     //     console.log(event);
     //     console.info(`is logged = ${isLogged}`)
     // }
+    
     //READING CONTEXT FROM CONTEXT PROVIDER
     const isLogged = useContext(UserContext);
 
