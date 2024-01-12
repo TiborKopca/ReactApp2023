@@ -22,7 +22,7 @@ function LoginUI({username, onLogoff, onLogin}){
     //     console.log(event);
     //     console.info(`is logged = ${isLogged}`)
     // }
-    
+
     //READING CONTEXT FROM CONTEXT PROVIDER
     const isLogged = useContext(UserContext);
 
@@ -37,7 +37,7 @@ function LoginUI({username, onLogoff, onLogin}){
                         onClick={onLogoff}
                         className="welcomeMessage"
                         >
-                        Welcome {username}
+                        Welcome {username}, Logoff
                         </p>
     return isLogged ? userLogged : userNotLogged
 }

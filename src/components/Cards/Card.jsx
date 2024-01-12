@@ -14,6 +14,10 @@ function Card(props){
         </div>
     );
 }
+
+export default Card
+
+
 //PROP TYPES DEFINITION
 Card.propTypes = {
     projectName: propTypes.string.isRequired,
@@ -23,5 +27,3 @@ Card.defaultProps = {
     projectName: "unknown",
     year: "20xx"
 }
-
-export default Card

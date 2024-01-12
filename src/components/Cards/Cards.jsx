@@ -21,7 +21,9 @@ function Cards() {
       </Wrapper>
   );
 }
+
 export default Cards;
+
 //PROPS VALIDATION
 Cards.propTypes = {
   children: propTypes.any,

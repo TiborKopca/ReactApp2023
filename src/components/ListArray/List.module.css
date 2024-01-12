@@ -9,8 +9,10 @@
 .listRow{
     margin-bottom: 0.2em;
     display: flex;
+    list-style-type: none;
+    
 }
-.listText{
+.listText, .taskText{
     flex:1;
     text-align: center;
 }
@@ -30,7 +32,7 @@
     font-size: medium;
     flex: 1;
 }
-.listDeleteButton, .listInsertButton, .listMoveButton{
+.listDeleteButton, .listInsertButton, .listMoveButton, .taskButton{
     display: inline;
     font-size: medium;
     background-color: var(--contactButtonColor);
@@ -52,4 +54,16 @@
     display: flex;
     width: 80vw;
     margin-left: 3em;
+}
+.taskListRow{
+    font-size: medium;
+    /* margin-bottom: 0.2em; */
+    display: flex;
+    list-style-type: none;
+    height: 3em;
+    align-items: center;
+}
+.taskListLabel{
+    /* margin:auto;
+    flex:0; */
 }
