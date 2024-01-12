@@ -44,13 +44,32 @@ export default function SearchBar() {
     //Object is inside arrow function
     //setInputs((values) => ({ ...values, searchInputField:event.target.value }));
     setInputs((values) => ({ ...values, [name]: value }));
-};
+  }
+
+  const handleSearchReset = () =>{
+    setInputStatus('ready');            //to again show inputfield
+    // console.log(inputs.searchInputField)
+    setError(null)
+    const newInput = {searchInputField:""}
+    setInputs(newInput) 
+  }
+
+  function ResetButton(){
+    return (
+          <div className={styles.buttonWrapper}>
+              <button 
+                className={styles.searchBarResetButton}
+                onClick={handleSearchReset}>New search
+              </button>
+          </div>
+  )}
 
   //CONDITIONAL RENDERING
   if (inputStatus === 'sent') {
     return (
       <section className={styles.searchWrapper}>
           <p className={styles.searchResult}>Your search &quot;{inputs.searchInputField}&quot; has been indeed encountered on this page!</p>
+          <ResetButton></ResetButton>
       </section>
     )
   }
