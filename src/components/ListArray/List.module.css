@@ -64,6 +64,6 @@
     align-items: center;
 }
 .taskListLabel{
-    /* margin:auto;
-    flex:0; */
+    margin:auto;
+    display:contents;
 }
