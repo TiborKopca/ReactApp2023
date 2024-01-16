@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { useContext } from "react";
+import { UserContext } from "../Header/Header.jsx";
 
 function Timer() {
   // let time = new Date().toLocaleTimeString();
@@ -65,7 +67,7 @@ function Timer() {
     }else{
       setCounting(true)
       startTimeRef.current = Date.now() - elapsedTime;
-      console.info(` Currenttime : ${formatTimeEU(startTimeRef.current)}, Elapsed time :${formatTimeEU(elapsedTime)}`)
+      //console.info(` Currenttime : ${formatTimeEU(startTimeRef.current)}, Elapsed time :${formatTimeEU(elapsedTime)}`)
     }
   }
 
@@ -101,17 +103,26 @@ function Timer() {
     miliseconds = String(miliseconds).padStart(2, "0");
     return `${hours} : ${minutes} : ${seconds} : ${miliseconds}` 
 }
-  return (
-    <>
-      <div style={{ display: "inline", marginLeft: "1em" }}>
-        Rendered: {count.current} times
-      </div>
-      <div style={{ display: "inline", marginLeft: "1em" }}>
-        Time on page: {countedTime}s
-      </div>
-      <div onClick={startStop} onDoubleClick={reset}>STOPWATCH Start/Stop, doubleclick to reset: {formatTimeEU(elapsedTime)}</div>
-      <div>Window Width:{width}px Height:{height}px</div>
-    </>
-  );
+
+  //READING CONTEXT FROM CONTEXT PROVIDER
+  const isLogged = useContext(UserContext);
+  if(isLogged){
+    
+    return (
+      <>
+        <div style={{ display: "inline" }}>
+          Rendered: {count.current} times
+        </div>
+        <div style={{ display: "inline", marginLeft: "1em" }}>
+          Time on page: {countedTime}s
+        </div>
+        <div onClick={startStop} onDoubleClick={reset}>STOPWATCH Start/Stop, doubleclick to reset: {formatTimeEU(elapsedTime)}</div>
+        <div>Window Width:{width}px Height:{height}px</div>
+      </>
+    );
+
+  }
+  return <></>
+
 }
 export default Timer;

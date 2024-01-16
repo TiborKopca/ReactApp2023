@@ -7,6 +7,7 @@ import { useState, createContext } from "react";
 import styles from "./Header.module.css";
 
 //USE CONTEXT HOOK
+//export const MyContext = createContext(defaultValue)
 export const UserContext = createContext();
 
 function Header() {
@@ -23,20 +24,20 @@ function Header() {
       <UserContext.Provider value={logged}>
         <LoginUI
           id="userLogin"
-        //   isLogged={true}
+          //   isLogged={true}
           username={"Tibor"}
           onLogin={() => {
             console.warn("Login atempt in progress!");
-            setLogged(true)
-            }}
+            setLogged(true);
+          }}
           onLogoff={() => {
             console.warn("Logoff atempt in progress!");
-            setLogged(false)
+            setLogged(false);
           }}
         ></LoginUI>
-      </UserContext.Provider>
-      <Clock></Clock>
       <Timer></Timer>
+      </UserContext.Provider>
+        <Clock></Clock>
       <Logo
         name="Tibor"
         className="logoAvatar"

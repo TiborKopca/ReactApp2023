@@ -1,6 +1,7 @@
 import styles from './Button.module.css'
 
 function Button(){
+
     const handleButtonClick = (a,e) => {
         console.log(e)
         alert(a);                                   //a - Passed atribute from bellow == the text
@@ -12,7 +13,7 @@ function Button(){
     return(
         <button 
             className={styles.contactButton} 
-            onClick={(event) => handleButtonClick("Leave a comment by filling up the form!",event)}
+            onClick={(event) => handleButtonClick("Leave a comment by filling up the form.",event)}
             //onMouseOver={}
             >Contact me!
         </button>

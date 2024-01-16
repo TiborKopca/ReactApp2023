@@ -1,10 +1,11 @@
 import styles from "./SearchBar.module.css";
-import { useState } from "react";
+import { useState , useRef} from "react";
 
 export default function SearchBar() {
   //inputs is a state variable and setInputs is the setter function
   const [inputs, setInputs] = useState({searchInputField:""});
   const [error, setError] = useState(null);
+  const inputRef = useRef(null);
 
   //UPDATER
   const [inputStatus, setInputStatus] = useState('ready'); //this has more advantages as true/false
@@ -53,6 +54,10 @@ export default function SearchBar() {
     const newInput = {searchInputField:""}
     setInputs(newInput) 
   }
+  
+  function handleGoFocus(){
+    inputRef.current.focus();
+  }
 
   function ResetButton(){
     return (
@@ -75,7 +80,7 @@ export default function SearchBar() {
   }
 
   return (
-    <section className={styles.searchWrapper}>
+    <section className={styles.searchWrapper} onClick={handleGoFocus}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -85,6 +90,7 @@ export default function SearchBar() {
           placeholder="enter your search querry here(hovno)"
           onChange={handleInputChange}
           disabled={inputStatus === 'submited'}
+          ref={inputRef}
         />
         <input 
           type="submit" 
