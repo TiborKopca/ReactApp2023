@@ -1,6 +1,42 @@
 .clockWrapper{
-    display: inline;
-    text-align: left;
-    font-weight: bold;
-    text-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.75);
+    display: block;
+    text-align: center;
+    /* font-weight: bold; */
+    text-shadow: 1px 5px 12px #bd0202f2;
+    margin: 0.5em auto;
+    font-family: 'Major Mono Display', monospace, 'Courier New', Courier;
+    color: #532727f2;
+}
+.nixie{
+    font-size: 5em;
+}
+.nixieWrapper{
+    display: flex;
+    height: 10em;
+    justify-content: center;
+}
+.digit1{
+    /* left:20%;
+    position: absolute; */
+    width: 7em;
+}
+.digit2{
+    /* left:40%;
+    position: absolute; */
+    width: 7em;
+}
+.digit{
+    text-align: center;
+    position: absolute;
+    font-family: 'Major Mono Display', monospace, 'Courier New', Courier;
+    font-size: 10em;
+    /* box-shadow: 0 0 5px #eee; */
+    /* line-height: 1.4; */
+    opacity: 0.2;
+}
+.digitActive{
+    opacity: 1;
+    color:hsla(0, 85%, 44%, 0.949);
+    transform: scale(1.02);
+    text-shadow: 1px 1px 20px #e70d0d;
 }

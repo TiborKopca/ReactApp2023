@@ -56,6 +56,7 @@ export default function SearchBar() {
   }
   
   function handleGoFocus(){
+    //The div on click will focus input field
     inputRef.current.focus();
   }
 

@@ -26,8 +26,9 @@ export default function About() {
   }
 
   return (
-    <section className={styles.aboutWrapper} id="About">
+    <section className={styles.aboutWrapper} id="about">
       <h2>About me</h2>
+      <p className={styles.aboutParagraph}>In this section you&apos;ll find all the non-important data.</p>
       <Panel title="Childhood" isActive={true}>
         <span lang="sk-SK">Ako by slováci povedali : popiči či dopiči! </span>
         Cillum duis anim labore aliquip qui. Ut elit quis duis id proident

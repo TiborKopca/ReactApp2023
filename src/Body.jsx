@@ -1,4 +1,3 @@
-import Button from "./components/Button/Button.jsx";
 import List from "./components/ListArray/List.jsx";
 import ListTech from "./components/ListTechs.jsx";
 import {techs} from "./components/Data/Data.jsx";
@@ -7,12 +6,12 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import About from './components/About/About.jsx';
 import Cards from './components/Cards/Cards.jsx';
 import ListReducer from './components/ListReducer/ListReducer.jsx';
+import Hero from "./components/Hero/Hero";
 
 function Body() {
   return (
     <>
-      <h1>Website in React!</h1>
-      <Button ></Button>
+      <Hero></Hero>
       <SearchBar></SearchBar>
       <List></List>
       <ListReducer></ListReducer>

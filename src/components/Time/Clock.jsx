@@ -32,10 +32,48 @@ function Clock() {
   //setInterval(function, miliseconds)
   setInterval(UpdateTime);
 
+  const digitActive = {
+    opacity: 1,
+    color: 'hsla(0, 85%, 44%, 0.949)',
+    transform: 'scale(1.02)',
+    'text-shadow' : '0px 0px 8px #e70d0d'
+  }
   return (
-    <div className={styles.clockWrapper}>
-      {currentTime} : {formatDate(todayWeekDay)} : {formatTimeEU(timeEU)}
-    </div>
+    <>
+      <div className={styles.clockWrapper}>
+        {currentTime} : {formatDate(todayWeekDay)}
+      </div>
+      <div className={[styles.clockWrapper, styles.nixie].join(" ")}>
+        {formatTimeEU(timeEU)}
+      </div>
+      <div className={styles.nixieWrapper}>
+        <div className={styles.digit1}>
+          <div className={styles.digit} style={null}>0</div>
+          <div className={styles.digit} style={digitActive}>1</div>
+          <div className={styles.digit} style={null}>2</div>
+          <div className={styles.digit}>3</div>
+          <div className={styles.digit}>4</div>
+          <div className={styles.digit}>5</div>
+          <div className={styles.digit}>6</div>
+          <div className={styles.digit}>7</div>
+          <div className={styles.digit}>8</div>
+          <div className={styles.digit}>9</div>
+        </div>
+        <div className={styles.digit2}>
+          <div className={[styles.digit, styles.digitActive].join(" ")}>0</div>
+          <div className={styles.digit}>1</div>
+          <div className={styles.digit}>2</div>
+          <div className={styles.digit}>3</div>
+          <div className={styles.digit}>4</div>
+          <div className={styles.digit}>5</div>
+          <div className={styles.digit}>6</div>
+          <div className={styles.digit}>7</div>
+          <div className={styles.digit}>8</div>
+          <div className={styles.digit}>9</div>
+        </div>
+      </div>
+  
+    </>
   );
 }
 export default Clock;

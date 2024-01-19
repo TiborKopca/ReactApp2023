@@ -1,9 +1,9 @@
 import Logo from "./Logo.jsx";
 import LoginUI from "./LoginUI.jsx";
 import HeaderColorPicker from "./HeaderColorPicker.jsx";
-import Clock from "./../Time/Clock.jsx";
 import Timer from "./../Time/Timer";
 import { useState, createContext } from "react";
+// import {useRef} from "react";
 import styles from "./Header.module.css";
 
 //USE CONTEXT HOOK
@@ -12,12 +12,23 @@ export const UserContext = createContext();
 
 function Header() {
   const [headerBackgroundColor, setHeaderBackgroundColor] = useState("#e6e6fa");
-  const [logged, setLogged] = useState(true);
+  const [logged, setLogged] = useState(false);
+  // const workRef = useRef(null);
 
   //Navbar/Header Color Picker
   function handleHeaderColor(event) {
     setHeaderBackgroundColor(event.target.value);
   }
+
+  //HANDLE SCROLL
+  // function handleScroll2Work(){
+  //   workRef.current.scrollIntoView(
+  //     {
+  //       behavior : 'smooth',
+  //       block: 'nearest',
+  //       inline: 'center'
+  //   })
+  // }
 
   return (
     <header id="header" className={styles.headerWrapper}>
@@ -37,7 +48,6 @@ function Header() {
         ></LoginUI>
       <Timer></Timer>
       </UserContext.Provider>
-        <Clock></Clock>
       <Logo
         name="Tibor"
         className="logoAvatar"
@@ -47,6 +57,8 @@ function Header() {
         height={100}
         id={1}
       ></Logo>
+
+
       <HeaderColorPicker></HeaderColorPicker>
       <label className={styles.inputColorPicker} htmlFor="inputColor">
         Select a header color:
@@ -69,7 +81,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="#About">About</a>
+            <a href="#about">About</a>
           </li>
           <li>
             <a href="#myWorks">My work</a>
