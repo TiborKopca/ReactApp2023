@@ -32,12 +32,18 @@ function Clock() {
   //setInterval(function, miliseconds)
   setInterval(UpdateTime);
 
-  const digitActive = {
+
+  const digitActive2 = {
     opacity: 1,
-    color: 'hsla(0, 85%, 44%, 0.949)',
-    transform: 'scale(1.02)',
-    'text-shadow' : '0px 0px 8px #e70d0d'
+    color: 'hsla(23, 79%, 52%, 0.63)',
+    // transform: 'scale(0.9)',
+    // 'text-shadow' : '0px 0px 8px #e70d0d'
+    shadowText: '0px 0px 8px #e70d0d', //its not registering
   }
+  const digitNull = {
+    display: 'none'
+  }
+
   return (
     <>
       <div className={styles.clockWrapper}>
@@ -48,19 +54,30 @@ function Clock() {
       </div>
       <div className={styles.nixieWrapper}>
         <div className={styles.digit1}>
-          <div className={styles.digit} style={null}>0</div>
-          <div className={styles.digit} style={digitActive}>1</div>
-          <div className={styles.digit} style={null}>2</div>
+          <div className={[styles.digit]}>0</div>
+          <div id="digit0" className={[styles.digit]} style={digitNull}>0</div>
+          <div className={[styles.digit]}>1</div>
+          <div id="digit1" className={styles.digit} style={digitNull}>1</div>
+          <div className={[styles.digit, styles.digitActive].join(" ")}>2</div>
+          <div className={[styles.digit]} style={digitActive2}>2</div>
           <div className={styles.digit}>3</div>
+          <div className={[styles.digit]} style={digitNull}>3</div>
           <div className={styles.digit}>4</div>
+          <div className={[styles.digit]} style={digitNull}>4</div>
           <div className={styles.digit}>5</div>
+          <div className={[styles.digit]} style={digitNull}>5</div>
           <div className={styles.digit}>6</div>
+          <div className={[styles.digit]} style={digitNull}>6</div>
           <div className={styles.digit}>7</div>
+          <div className={[styles.digit]} style={digitNull}>7</div>
           <div className={styles.digit}>8</div>
+          <div className={[styles.digit]} style={digitNull}>8</div>
           <div className={styles.digit}>9</div>
+          <div className={[styles.digit]} style={digitNull}>9</div>
         </div>
         <div className={styles.digit2}>
           <div className={[styles.digit, styles.digitActive].join(" ")}>0</div>
+          <div className={styles.digit} style={digitActive2}>0</div>
           <div className={styles.digit}>1</div>
           <div className={styles.digit}>2</div>
           <div className={styles.digit}>3</div>
