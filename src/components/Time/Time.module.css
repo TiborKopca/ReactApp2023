@@ -13,24 +13,28 @@
 .nixieWrapper{
     display: flex;
     /* height: 25vh; */
-    height:200px;
-    width: 250px;
+    height: 16em;
+    /* width: 250px; */
     justify-content: space-evenly;
     margin: 0 auto;
-    /* background-image: url('/src/assets/images/derek-thomson-NqJYQ3m_rVA-unsplash.jpg'); */
     background-color: #3f3f3fd9;
     background-position: center;
     background-repeat: repeat;
+    /* background-image: url('/src/assets/images/derek-thomson-NqJYQ3m_rVA-unsplash.jpg'); */
+    background-image: linear-gradient(to right, rgb(231 228 227 / 70%),rgb(63 63 63 / 85%));
     color: #f16340b3;
 }
 .digit1, .digit2{
     /* left:20%;
     position: absolute; */
     width: 7em;
+    height: 80%;
     display: flex;
     align-items: center;
-    box-shadow: inset 0px -1px 11px 0px #4ee5f761;
+    box-shadow: inset 0px -1px 11px 7px #4ee5f761;
     border-radius: 25px;
+    justify-content: center;
+    align-self: center;
 }
 
 .digit{
