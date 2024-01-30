@@ -5,6 +5,7 @@ import Timer from "./../Time/Timer";
 import { useState, createContext } from "react";
 // import {useRef} from "react";
 import styles from "./Header.module.css";
+import Clock from "../Time/Clock"
 
 //USE CONTEXT HOOK
 //export const MyContext = createContext(defaultValue)
@@ -33,6 +34,7 @@ function Header() {
   return (
     <header id="header" className={styles.headerWrapper}>
       <UserContext.Provider value={logged}>
+        <Clock></Clock>
         <LoginUI
           id="userLogin"
           //   isLogged={true}

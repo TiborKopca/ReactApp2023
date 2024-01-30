@@ -1,13 +1,12 @@
 // import styles from "./Hero.module.css"
 import Button from "./../Button/Button.jsx"
-import Clock from "../Time/Clock"
-
+import NixieClock from "../Time/NixieClock.jsx";
 
 function Hero(){
     return (
             <>
                 <h1>Website in React!</h1>
-                <Clock></Clock>
+                <NixieClock></NixieClock>
                 <Button ></Button>
             </>            
 )}
