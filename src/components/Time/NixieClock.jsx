@@ -1,74 +1,88 @@
 // import propTypes from 'prop-types'
 import styles from "./Time.module.css";
+import { useState } from "react";
 
 function NixieClock() {
+  let timeNixie = new Date();
+  //Initial time
+  const [currentTime, setCurrentTime] = useState(timeNixie);
 
-  const timeNixie = new Date();
-    //To display hours
-    function formatTimeHours(currentTime) {
-      const hours = currentTime.getHours();
-      return `${toOneNumerical(hours)}`
-    }
-     //To display ten-hours
-     function formatTimeDecimalHours(currentTime) {
-      const hours = currentTime.getHours();
-      return `${toDecimal(hours)}`
-    }
+  //UPDATER CALLED BY setInterval
+  const UpdateTime = () => {
+    let currentTime = new Date();
+    setCurrentTime(currentTime);
+  };
+
+  //setInterval(function, miliseconds)
+  setInterval(UpdateTime);
+
+  //To display hours
+  function formatTimeHours(currentTime) {
+    const hours = currentTime.getHours();
+    return `${toOneNumerical(hours)}`;
+  }
+  //To display ten-hours
+  function formatTimeDecimalHours(currentTime) {
+    const hours = currentTime.getHours();
+    return `${toDecimal(hours)}`;
+  }
   //To display minutes
   function formatTimeMinutes(currentTime) {
     const minutes = currentTime.getMinutes();
-    return `${toOneNumerical(minutes)}`
+    return `${toOneNumerical(minutes)}`;
   }
-   //To display ten-minutes
-   function formatTimeDecimalMinutes(currentTime) {
+  //To display ten-minutes
+  function formatTimeDecimalMinutes(currentTime) {
     const minutes = currentTime.getMinutes();
-    return `${toDecimal(minutes)}`
+    return `${toDecimal(minutes)}`;
   }
   //To display seconds
   function formatTimeSeconds(currentTime) {
-     const seconds = currentTime.getSeconds();
-     return `${toOneNumerical(seconds)}`
-   }
+    const seconds = currentTime.getSeconds();
+    return `${toOneNumerical(seconds)}`;
+  }
 
   //To display ten-seconds
   function formatTimeDecimalSeconds(currentTime) {
     const seconds = currentTime.getSeconds();
-    return `${toDecimal(seconds)}`
+    return `${toDecimal(seconds)}`;
   }
 
-  function toOneNumerical(unitsOfTime){
-    if(unitsOfTime < 10){
-      return unitsOfTime
-    }else if(unitsOfTime >= 10 && unitsOfTime < 20){
-      return unitsOfTime - 10
-    }else if(unitsOfTime >= 20 && unitsOfTime < 30){
-      return unitsOfTime - 20
-    }else if(unitsOfTime >= 30 && unitsOfTime < 40){
-      return unitsOfTime - 30
-    }else if(unitsOfTime >= 40 && unitsOfTime < 50){
-      return unitsOfTime - 40
-    }else if(unitsOfTime >= 50 && unitsOfTime < 60){
-      return unitsOfTime - 50
+  function toOneNumerical(unitsOfTime) {
+    if (unitsOfTime < 10) {
+      return unitsOfTime;
+    } else if (unitsOfTime >= 10 && unitsOfTime < 20) {
+      return unitsOfTime - 10;
+    } else if (unitsOfTime >= 20 && unitsOfTime < 30) {
+      return unitsOfTime - 20;
+    } else if (unitsOfTime >= 30 && unitsOfTime < 40) {
+      return unitsOfTime - 30;
+    } else if (unitsOfTime >= 40 && unitsOfTime < 50) {
+      return unitsOfTime - 40;
+    } else if (unitsOfTime >= 50 && unitsOfTime < 60) {
+      return unitsOfTime - 50;
     }
   }
 
   //Sets the number to first decimal
-  function toDecimal(unitsOfTime){
-    if(unitsOfTime < 10){
-      return "0"
-    }else if(unitsOfTime >= 10 && unitsOfTime < 20){
-      return "1"
-    }else if( unitsOfTime >=20 && unitsOfTime < 30){
-      return "2"
-    }else if( unitsOfTime >=30 && unitsOfTime < 40){
-      return "3"
-    }else if( unitsOfTime >=40 && unitsOfTime < 50){
-      return "4"
-    }else if( unitsOfTime < 60){
-      return "5"
-    }else {return "-"}
+  function toDecimal(unitsOfTime) {
+    if (unitsOfTime < 10) {
+      return "0";
+    } else if (unitsOfTime >= 10 && unitsOfTime < 20) {
+      return "1";
+    } else if (unitsOfTime >= 20 && unitsOfTime < 30) {
+      return "2";
+    } else if (unitsOfTime >= 30 && unitsOfTime < 40) {
+      return "3";
+    } else if (unitsOfTime >= 40 && unitsOfTime < 50) {
+      return "4";
+    } else if (unitsOfTime < 60) {
+      return "5";
+    } else {
+      return "-";
     }
-  
+  }
+
   const digitActive2 = {
     opacity: 1,
     color: "hsla(23, 79%, 52%, 0.63)",
@@ -83,12 +97,12 @@ function NixieClock() {
   return (
     <>
       <div className={styles.nixieWrapper}>
-      <div className={styles.hours}>
+        <div className={styles.hours}>
           <div className={[styles.digit, styles.digitActive].join(" ")}>
-          {formatTimeDecimalHours(timeNixie)}
+            {formatTimeDecimalHours(currentTime)}
           </div>
           <div className={[styles.digit]} style={digitActive2}>
-          {formatTimeDecimalHours(timeNixie)}
+            {formatTimeDecimalHours(currentTime)}
           </div>
           <div className={[styles.digit]}>0</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -100,7 +114,7 @@ function NixieClock() {
           </div>
           <div className={[styles.digit]}>2</div>
           <div className={[styles.digit]} style={digitNull}>
-          2  
+            2
           </div>
           <div className={styles.digit}>3</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -133,10 +147,10 @@ function NixieClock() {
         </div>
         <div className={styles.hours}>
           <div className={[styles.digit, styles.digitActive].join(" ")}>
-          {formatTimeHours(timeNixie)}
+            {formatTimeHours(currentTime)}
           </div>
           <div className={[styles.digit]} style={digitActive2}>
-          {formatTimeHours(timeNixie)}
+            {formatTimeHours(currentTime)}
           </div>
           <div className={[styles.digit]}>0</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -148,7 +162,7 @@ function NixieClock() {
           </div>
           <div className={[styles.digit]}>2</div>
           <div className={[styles.digit]} style={digitNull}>
-          2  
+            2
           </div>
           <div className={styles.digit}>3</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -179,15 +193,21 @@ function NixieClock() {
             9
           </div>
         </div>
-        <div className={[styles.separator, styles.digitActive, styles.digitActive2].join(" ")}>
-        :
+        <div
+          className={[
+            styles.separator,
+            styles.digitActive,
+            styles.digitActive2,
+          ].join(" ")}
+        >
+          :
         </div>
         <div className={styles.minutes}>
           <div className={[styles.digit, styles.digitActive].join(" ")}>
-          {formatTimeDecimalMinutes(timeNixie)}
+            {formatTimeDecimalMinutes(currentTime)}
           </div>
           <div className={[styles.digit]} style={digitActive2}>
-          {formatTimeDecimalMinutes(timeNixie)}
+            {formatTimeDecimalMinutes(currentTime)}
           </div>
           <div className={[styles.digit]}>0</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -199,7 +219,7 @@ function NixieClock() {
           </div>
           <div className={[styles.digit]}>2</div>
           <div className={[styles.digit]} style={digitNull}>
-          2  
+            2
           </div>
           <div className={styles.digit}>3</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -232,10 +252,10 @@ function NixieClock() {
         </div>
         <div className={styles.minutes}>
           <div className={[styles.digit, styles.digitActive].join(" ")}>
-          {formatTimeMinutes(timeNixie)}
+            {formatTimeMinutes(currentTime)}
           </div>
           <div className={[styles.digit]} style={digitActive2}>
-          {formatTimeMinutes(timeNixie)}
+            {formatTimeMinutes(currentTime)}
           </div>
           <div className={[styles.digit]}>0</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -247,7 +267,7 @@ function NixieClock() {
           </div>
           <div className={[styles.digit]}>2</div>
           <div className={[styles.digit]} style={digitNull}>
-          2  
+            2
           </div>
           <div className={styles.digit}>3</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -278,15 +298,21 @@ function NixieClock() {
             9
           </div>
         </div>
-        <div className={[styles.separator, styles.digitActive, styles.digitActive2].join(" ")}>
-        :
+        <div
+          className={[
+            styles.separator,
+            styles.digitActive,
+            styles.digitActive2,
+          ].join(" ")}
+        >
+          :
         </div>
         <div className={styles.seconds}>
           <div className={[styles.digit, styles.digitActive].join(" ")}>
-            {formatTimeDecimalSeconds(timeNixie)}
+            {formatTimeDecimalSeconds(currentTime)}
           </div>
           <div className={[styles.digit]} style={digitActive2}>
-          {formatTimeDecimalSeconds(timeNixie)}
+            {formatTimeDecimalSeconds(currentTime)}
           </div>
           <div className={[styles.digit]}>0</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -298,7 +324,7 @@ function NixieClock() {
           </div>
           <div className={[styles.digit]}>2</div>
           <div className={[styles.digit]} style={digitNull}>
-          2  
+            2
           </div>
           <div className={styles.digit}>3</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -331,10 +357,10 @@ function NixieClock() {
         </div>
         <div className={styles.seconds}>
           <div className={[styles.digit, styles.digitActive].join(" ")}>
-            {formatTimeSeconds(timeNixie)}
+            {formatTimeSeconds(currentTime)}
           </div>
           <div className={[styles.digit]} style={digitActive2}>
-          {formatTimeSeconds(timeNixie)}
+            {formatTimeSeconds(currentTime)}
           </div>
           <div className={[styles.digit]}>0</div>
           <div className={[styles.digit]} style={digitNull}>
@@ -346,7 +372,7 @@ function NixieClock() {
           </div>
           <div className={[styles.digit]}>2</div>
           <div className={[styles.digit]} style={digitNull}>
-          2  
+            2
           </div>
           <div className={styles.digit}>3</div>
           <div className={[styles.digit]} style={digitNull}>
