@@ -14,7 +14,7 @@ function NixieClock() {
   };
 
   //setInterval(function, miliseconds)
-  setInterval(UpdateTime);
+  setInterval(UpdateTime, 1000);
 
   //To display hours
   function formatTimeHours(currentTime) {
@@ -404,6 +404,7 @@ function NixieClock() {
           </div>
         </div>
       </div>
+      <h2>It&apos;s time to : </h2>
     </>
   );
 }

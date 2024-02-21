@@ -15,10 +15,15 @@ function Timer() {
   const [elapsedTime, setElapsedTime] = useState(0);
   const internalIDRef = useRef(null); 
 
+  //====================EFFECTS==========================
+
   //If component re-renders, it will count each time + 1
   useEffect(() => {
+    // Code here will run after *every* render
     count.current = count.current + 1
   })
+
+  //THIS EFFECT WOULD ONLY BE IN ACTION ON MOUNT AND WHEN [count] variable changes
   // useEffect(() => {
   //   // let timer = 
   //   setTimeout(() => {
@@ -27,11 +32,9 @@ function Timer() {
   //   }, 1000);
   // }, [count]);
 
+
+  //TIMER EFFECT COUNTS TIME ON THE PAGE
   //this useEffect runs every 1000ms = 1s and counts time in seconds
-  //useEffect(()=>{})             runs on every re-render
-  //useEffect(()=>{},[])          runs only on mount, Empty array of dependencies === effect runs only on mount/first render
-  //useEffect(()=>{},[value])     runs on mount + when value/dependency changes
-  //useEffect(function,[dependencies])
   useEffect(() => {
     let timer =
     setTimeout(() => {
@@ -41,13 +44,7 @@ function Timer() {
     return () => clearTimeout(timer)
   });
   
-  //RENDER UPDATE HANDLER
-  function handleWindowResize(){
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-  }
-
-  //FUNCTIONS FOR WINDOW
+  //EFFECT FOR WINDOW RESIZE INFO
   useEffect(() => {
   // window.addEventListener(event, function)
   window.addEventListener("resize",handleWindowResize)
@@ -59,22 +56,6 @@ function Timer() {
   }
   },[])
 
-  //FUNCTIONS FOR STOPWATCH
-  function startStop(){
-    if(counting){
-      setCounting(false)
-      //console.info(`Counting : ${counting}, Currenttime : ${formatTimeEU(startTimeRef.current)}, Elapsed time :${formatTimeEU(elapsedTime)}`)
-    }else{
-      setCounting(true)
-      startTimeRef.current = Date.now() - elapsedTime;
-      //console.info(` Currenttime : ${formatTimeEU(startTimeRef.current)}, Elapsed time :${formatTimeEU(elapsedTime)}`)
-    }
-  }
-
-  function reset(){
-      setElapsedTime(0);
-      setCounting(false)
-  }
 
   //EVERY STATE CHANGE OF VARIABLE COUNTING, THIS CODE RUNS
   useEffect(()=>{
@@ -91,6 +72,33 @@ function Timer() {
     }
   },[counting])
 
+  //====================HANDLERS==========================
+
+  //RENDER UPDATE HANDLER
+  function handleWindowResize(){
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
+
+  //FUNCTIONS FOR STOPWATCH
+  function startStop(){
+    if(counting){
+      setCounting(false)
+      //console.info(`Counting : ${counting}, Currenttime : ${formatTimeEU(startTimeRef.current)}, Elapsed time :${formatTimeEU(elapsedTime)}`)
+    }else{
+      setCounting(true)
+      startTimeRef.current = Date.now() - elapsedTime;
+      //console.info(` Currenttime : ${formatTimeEU(startTimeRef.current)}, Elapsed time :${formatTimeEU(elapsedTime)}`)
+    }
+  }
+
+  //USED TO RESET TIMER
+  function reset(){
+      setElapsedTime(0);
+      setCounting(false)
+  }
+
+
   //To display time without useState. The time we pass will be in Miliseconds
   function formatTimeEU(params){
     let hours = Math.floor(params / (1000 * 60 * 60) );
@@ -102,8 +110,9 @@ function Timer() {
     seconds = String(seconds).padStart(2, "0");
     miliseconds = String(miliseconds).padStart(2, "0");
     return `${hours} : ${minutes} : ${seconds} : ${miliseconds}` 
-}
+  }
 
+//==================================RENDERING===============================================
   //READING CONTEXT FROM CONTEXT PROVIDER
   const isLogged = useContext(UserContext);
   if(isLogged){
