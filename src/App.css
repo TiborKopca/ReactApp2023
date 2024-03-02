@@ -45,14 +45,6 @@ header{
   min-height: 30svh;
   background-color: var(--headerBackgroundColor);
 }
-header ul{
-  padding-inline-start: 0;
-  display: flex;
-  justify-content: space-around;
-}
-header li{
-  list-style-type: none;
-}
 
 
 

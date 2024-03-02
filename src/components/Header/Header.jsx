@@ -32,6 +32,7 @@ function Header() {
   // }
 
   return (
+    <>
     <header id="header" className={styles.headerWrapper}>
       <UserContext.Provider value={logged}>
         <Clock></Clock>
@@ -72,6 +73,8 @@ function Header() {
         value={headerBackgroundColor}
         onChange={handleHeaderColor}
       />
+    </header>
+      {/* NAVBAR TO BE STICKY SHOULD BE ON THE TOP LEVEL, NOT HERE IN HEADER */}
       <nav
         className={styles.navbar}
         style={{ backgroundColor: headerBackgroundColor }}
@@ -96,7 +99,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </header>
+      </>
   );
 }
 export default Header;

@@ -11,6 +11,18 @@ header{
 }
 .navbar{
     /* background-color: #e6e6fa; */
+    position: sticky;
+    top : 0;
+    z-index: 10;
+}
+.navbar ul{
+    padding-inline-start: 0;
+    display: flex;
+    justify-content: space-around;
+    margin : 0;
+}
+.navbar li{
+    list-style-type: none;
 }
 .inputColorPicker{
     cursor: pointer;

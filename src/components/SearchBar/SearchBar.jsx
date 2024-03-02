@@ -24,7 +24,7 @@ export default function SearchBar() {
   }
 
   function submitForm(inputs) {
-    // Pretend it's hitting the network.
+    // Pretend it's hitting the network, 500ms delay
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         let shouldError = inputs.searchInputField.toLowerCase() !== 'hovno'
@@ -33,7 +33,7 @@ export default function SearchBar() {
         } else {
           resolve();
         }
-      }, 1500);
+      }, 500);
     });
   }
 
