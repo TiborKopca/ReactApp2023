@@ -8,7 +8,11 @@ function Card(props){
     return(
         <div className={styles.card}>
             <p className={styles.projectYear}>{props.year}</p>
-            <img className={styles.cardImage} alt="Project picture alternate description" src={profilePicture}></img>
+            <img className={styles.cardImage} 
+                alt="Project picture alternate description" 
+                src={profilePicture}
+                loading="lazy">
+            </img>
             <h2 className={styles.cardTitle}>{props.projectName}</h2>
             <p className={styles.cardText}>Project Description</p>
         </div>
